@@ -17,6 +17,7 @@ class AboutSeeder extends Seeder
             [
                 "name"=>"charnelle kengne",
                 "email"=>"charnelle@kengne",
+                "phone"=>"+237655155859",
                 "address"=>"baffoussam",
                 "description"=>"describe mem",
                 "summary"=>"description summary",
