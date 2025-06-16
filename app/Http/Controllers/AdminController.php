@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+// namespace App\Http\Controllers;
 
-class AdminController extends Controller
-{
-    public function admin()
-    {
-        return view('admin.dashboard');
-    }
-}
+// class AdminController extends Controller
+// {
+//     public function admin()
+//     {
+//         return view('admin.dashboard');
+//     }
+// }

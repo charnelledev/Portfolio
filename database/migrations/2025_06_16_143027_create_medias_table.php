@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table(
-            'abouts',
-            function (Blueprint $table) {
-                $table->text('summary')
-                    ->nullable()
-                    ->after('description');
-            }
-        );
+        Schema::create('medias', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -26,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('abouts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('medias');
     }
 };
