@@ -11,12 +11,18 @@
     <link rel="stylesheet" href="{{ asset('template/assets/fonts/unicons/css/line.css') }}">
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('template/assets/css/admin.css') }}">
-   
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+       
+        @endif
 </head>
 <body>
+
     @include('layouts.admin.header-admin')
     @include('layouts.admin.sidebar-admin')
+
     @yield('content')
+
     <script src="{{ asset('template/assets/js/admin.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
