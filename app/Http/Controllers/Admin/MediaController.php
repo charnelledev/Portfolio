@@ -12,7 +12,28 @@ class MediaController extends Controller
 {
     public function index()
     {
-        $medias= media::latest()->get();
+        $medias= Media::latest()->get();
         return view ('admin.medias.index-medias',compact('medias'));
+    }
+    public function store(Request $request)
+    {
+        $validateData= $request->validate([
+            'link'=>'required|url|max:255|active_url',
+            'icon'=>'required|string|max:255',
+
+
+        ],
+        [
+           'link.required'=>'le lien est obligatoire',
+           'link.url'=>'le lien doit etre une url valide (ex:https://...)',
+           'link.active_url'=>'le lien doit pointer vers un site actif',
+           'link.max'=>'le lien ne doit pas depasser :max caractere',
+           'link.required'=>'le code de l\'icon est obligatoire',
+           'link.max'=>'le code icon ne doit pas depasser :max caracteres',
+        ]);
+        Media::create($validateData);
+        return redirect()
+        ->route('index-media')
+        ->with('sucess','reseau social ajouter avec success');
     }
 }
