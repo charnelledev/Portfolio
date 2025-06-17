@@ -19,6 +19,10 @@ Route::patch('/admin/abouts', [AboutController::class, 'update'])->name('update-
 
 Route::get('/admin/medias',[MediaController::class,'index'])->name('index-media');
 Route::post('/admin/medias/store',[MediaController::class,'store'])->name('store-medias');
+Route::delete('/admin/medias', [MediaController::class, 'destroy'])->name('delete-medias');
+
+// Route::delete('/medias/delete', [MediaController::class, 'destroy'])->name('delete-medias');
+
 
 
 Route::get('/{any}', function () {

@@ -6,14 +6,14 @@
                     <div class="social_table-heading">
                         <div>
                             
-                            @error('link')
                             <p>Link</p>
+                            @error('link')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
 
                      <div>
-                         <span style="color:#006fbb;">(Find your icon class: Font Awesome)</span>
+                         <p>icon</p>
                          @error('icon')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
