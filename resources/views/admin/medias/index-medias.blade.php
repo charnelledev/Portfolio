@@ -4,7 +4,7 @@
     <div class="p-10">
         <main>
             @if (session('success'))
-                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+                <div id="flash-message" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
                     {{ session('success') }}
                 </div>
             @endif
@@ -14,6 +14,7 @@
                     {{ session('error') }}
                 </div>
             @endif
+            
 
             <div class="card">
 
@@ -54,12 +55,23 @@
                 <br>
                 @include('admin.medias.form-medias')
             </div>
-
-
-
-
-
-
         </main>
     </div>
+
+
+    
+
+    <script>
+        // Disparaît après 3 secondes
+        setTimeout(function() {
+            let message = document.getElementById('flash-message');
+            if (message) {
+                message.style.transition = "opacity 0.5s ease-out";
+                message.style.opacity = 0;
+                setTimeout(() => message.remove(), 500); // retire l'élément après le fade
+            }
+        }, 3000); // 3 secondes
+    </script>
+
+
 @endsection()
