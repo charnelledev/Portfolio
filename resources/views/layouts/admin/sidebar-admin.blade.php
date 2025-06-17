@@ -26,6 +26,13 @@
                         </a>
                     </li>
                     <li>
+                        <a  class="{{ (request()->is('admin/medias'))?'nav-active' : '' }}"
+                        href="{{ route('index-media') }}">
+                            <span><i class="fas fa-user"> </i></span>
+                            <span>About Me</span>
+                        </a>
+                    </li>
+                    <li>
                         <a  href="service.html">
                             <span><i class="fas fa-concierge-bell"> </i></span>
                             <span>Services</span>
