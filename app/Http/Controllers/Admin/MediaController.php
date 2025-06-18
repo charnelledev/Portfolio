@@ -38,13 +38,7 @@ class MediaController extends Controller
             ->route('index-media')
             ->with('sucess', 'reseau social ajouter avec success');
     }
-    //  public function destroy()
-    // {
-    //     $product = Media::findOrFail();
-    //     $product->delete();
-    //     return redirect()->route('index-media')
-    //         ->with('errot', 'media deleted successfully.');
-    // }
+  
     public function destroy(Request $request)
     {
         $media = Media::findOrFail($request->id); 
