@@ -14,14 +14,14 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-         DB::table('medias')->insert(
-            [
-               "name"=>"charnelle kengne",
-                "email"=>"charnelle@kengne",
-                "email_verified_at"=>"charnelle@kengne",
-                "password"=>"qwert12345",
-                "role"=>"user",
-            ]
-            );
+        //  DB::table('medias')->insert(
+        //     [
+        //        "name"=>"charnelle kengne",
+        //         "email"=>"charnelle@kengne",
+        //         "email_verified_at"=>"charnelle@kengne",
+        //         "password"=>"qwert12345",
+        //         "role"=>"user",
+        //     ]
+        //     );
     }
 }
