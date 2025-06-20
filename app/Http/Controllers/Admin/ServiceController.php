@@ -11,7 +11,9 @@ class ServiceController extends Controller
    
     public function index(Request $request)
     {
-        $services = Service::all();
+        $services = Service::filter($request)->get();
+        // var_dump($services);
+          
         return view('admin.services.index-services', compact('services'));
     }
 
@@ -31,8 +33,9 @@ class ServiceController extends Controller
         ]);
 
         Service::create($validatedData);
-
-        return redirect()->route('index-services')->with('success', 'Service créé avec succès.');
+        return redirect()
+        ->route('index-services')
+        ->with('success', 'Service créé avec succès.');
     }
 
   

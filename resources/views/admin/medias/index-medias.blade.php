@@ -43,13 +43,7 @@
                             <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded">Supprimer</button>
                         </form>
 
-                        {{-- <form action="{{ route('delete-medias') }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="id" value="{{ $media->id }}">
-                            <button type="submit">Delete</button>
-                        </form> --}}
-
+                     
                     </div>
                 @endforeach
                 <br>

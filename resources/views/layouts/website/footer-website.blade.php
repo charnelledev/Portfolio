@@ -1,6 +1,5 @@
-@extends('layouts.admin.header-admin')
-@section('footer')
-<footer class="footer">
+
+<footer class="footer ">
     <div class="footer_bg">
       <div class="footer_container container grid">
           <div>
@@ -35,6 +34,14 @@
               </a>
           </div>
       </div>
-      <p class="footer_copy">&#169; Share Tutorials. All right reserved</p>
+      <p class="footer_copy text-white">&#169; Share Tutorials. All right reserved</p>
+    </div>
+    <div class="h-5 w-full p-5 text-white bg-green-500 flex justify-between items-center ">
+        @if (Auth::check() && auth()->user()->role === 'admin')
+            <a href="{{ route('admin-dashboard') }}" class="text-white">Admin Dashboard</a>
+        @else
+            <a href="{{ route('login') }}" class="text-white">Login</a>
+        @endif
+       
     </div>
   </footer>

@@ -2,21 +2,24 @@
 
 @section('content')
 <main>
-    @if (session('success'))
-        <div id="flash-message" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+    <div class="mt-4 ml-4 mr-4">
+    
+        @if (session('success'))
+        <div id="flash-message" class="bg-green-100 border border-green-500 text-green-700 px-4 py-3 rounded relative mb-4">
             {{ session('success') }}
         </div>
-    @endif
-
-    @if (session('error'))
+        @endif
+        @if (session('error'))
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
             {{ session('error') }}
         </div>
-    @endif
+        @endif
+    </div>
 
     <section class="services" id="services">
         <div class="titlebar">
             <h1>Services</h1>
+            <p class="text-gray-600">Manage your services here.</p>
             <button class="open-modal">New Service</button>
         </div>
         <div class="table">
@@ -29,50 +32,65 @@
                     </ul>
                 </div>
             </div>
-            <form action="get" action="">
 
-        
-         <div class="table-search">
-                    <div>
-                        <select class="search-select " name="" id="">
-                            <option value="">Filter Service</option>
-                        </select>
-                    </div>
-                    <div class="flex gap-5 ml-2 relative">
+            
+            <form method="get" action="{{ route('index-services') }}">
 
-                        <input class="" type="text" name="name" placeholder="Rechercher le titre de service..."
-                            value="">
-                        <button class="min-w-30 h-12 ">Recherche</button>
-                        <a href="{{ url('/admin/services') }}">
-                            <button class="min-w-30 h-12">Réinitialiser</button>
-                        </a>
-                    </div>
-         </div>
+                <div class="table-search">
+                            <div>
+                                <select class="search-select " name="" id="">
+                                    <option value="">Filter Service</option>
+                                </select>
+                            </div>
+                            <div class="flex gap-5 ml-2 relative">
+
+                                <input class="" type="text" name="name" placeholder="Rechercher le titre de service..."
+                                    value="{{ Request::get('name') }}">
+                                
+                                <button class="min-w-30 h-12 bg-green-500 text-white p-2 rounded">Recherche</button>
+                                <a  class="min-w-30 h-12 bg-blue-600 text-white p-2 rounded" href="{{ url('/admin/services') }}">
+                                    Réinitialiser
+                                </a>
+                            </div>
+                </div>
+
+
+        </form>
+
             <div class="service_table-heading">
                 <p>Title</p>
                 <p>Icon</p>
                 <p>Description</p>
                 <p>Actions</p>
             </div>
-    </form>
 
             @foreach ($services as $service)
                 <div class="service_table-items">
-                    <p>{{ $service->name }}</p>
+                    <p>{{$service->name}}</p>
                     <button class="service_table-icon">
                         <i class="{{ $service->icon }}"></i>
                     </button>
                     <p>{{ $service->description }}</p>
                     <div>
-                        <button class="btn-icon success" onclick="openEditModal({{ $service->id }})">
+                        <button class="btn-icon success p-2 bg-green-400" onclick="openEditModal({{ $service->id }})">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
-                        <form action="{{ route('delete-services', $service->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Voulez-vous vraiment supprimer ce service ?');">
+
+                          <form action="{{ route('delete-services') }}" method="POST"
+                            onsubmit="return confirm('Voulez-vous vraiment supprimer ce média ?');">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $service->id }}">
+                            <button type="submit" class="btn-icon danger p-2 bg-red-500"><i class="far fa-trash-alt"></i></button>
+                        </form>
+
+
+                        {{-- <form action="{{ route('delete-services', $service->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Voulez-vous vraiment supprimer ce service ?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn-icon danger">
                                 <i class="far fa-trash-alt"></i>
-                            </button>
+                            </button> --}}
                         </form>
                     </div>
                 </div>
@@ -87,7 +105,7 @@
         </div>
 
         <!-- SERVICES MODAL -->
-        {{-- <form id="serviceForm" action="{{ route('services.store') }}" method="POST">
+        <form id="serviceForm" action="{{ route('store-services') }}" method="POST">
             @csrf
             <input type="hidden" name="_method" id="formMethod" value="POST">
             <input type="hidden" name="id" id="serviceId">
@@ -124,7 +142,7 @@
                     </div>
                 </div>
             </div>
-        </form> --}}
+        </form>
     </section>
 </main>
 

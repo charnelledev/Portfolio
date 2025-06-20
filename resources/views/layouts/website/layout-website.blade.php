@@ -44,7 +44,7 @@
         </a>
 
         <!--==================== SWIPER JS ====================-->
-        <script src="../../template/assets/js/swiper-bundle.min.js"></script>
+        <script src="{{ asset('template/assets/js/swiper-bundle.min.js') }}"></script>
 {{-- footer --}}
         <!--==================== MAIN JS ====================-->
         <script src="../../template/assets/js/main.js"></script>

@@ -10,12 +10,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Service extends Model
 {
     //  protected $table = 'services';
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'icon',
+        'description',
+    ];
 
     public static function filter(Request $request)
     {
         $query = self::query();
-        if($query-filled('name')) {
+        if($request->filled('name')) {
             $query->where('name', 'like', '%' . $request->input('name') . '%');
         }
         return $query;

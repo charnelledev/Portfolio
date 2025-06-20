@@ -24,9 +24,13 @@
                 <li class="nav-item">
                     <a href="#contact" class="nav_link">Contact Me</a>
                 </li>
+
+                @if(Auth::check() && auth()->user()->role === 'admin')
                 <li class="nav-item">
                     <a href="{{route('admin-dashboard')}}" class="nav_link">Admin</a>
                 </li>
+                @endif
+
             </ul>
 
             <div class="nav_close" id="nav-close">
