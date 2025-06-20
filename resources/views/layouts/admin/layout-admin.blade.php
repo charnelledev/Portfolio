@@ -18,6 +18,7 @@
 </head>
 <body>
 
+
     @include('layouts.admin.header-admin')
     @include('layouts.admin.sidebar-admin')
 
@@ -47,6 +48,7 @@
           }
         });
     </script>
+
 </body>
 
 </html>

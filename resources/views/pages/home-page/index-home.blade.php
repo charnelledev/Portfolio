@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="home_data">
-                    <h1 class="home_title">hello I'am {{ $about->name}} </h1>
+                    <h1 class="home_title">hello I'am{{$about->name}}</h1>
                     <h3 class="home_subtitle">FullStack Web developer</h3>
                     <p class="home_description">
                         "Fullstack Web Developer — crafting high-quality, reliable, and scalable web applications."

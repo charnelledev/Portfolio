@@ -29,17 +29,18 @@
                         <a  class="{{ (request()->is('admin/medias'))?'nav-active' : '' }}"
                         href="{{ route('index-media') }}">
                             <span><i class="fas fa-user"> </i></span>
-                            <span>About Me</span>
+                            <span>Media</span>
                         </a>
                     </li>
                     <li>
-                        <a  href="service.html">
+                        <a  class="{{ (request()->is('admin/services'))?'nav-active' : '' }}" href="{{ route('index-services') }}">
                             <span><i class="fas fa-concierge-bell"> </i></span>
                             <span>Services</span>
                         </a>
                     </li>
                     <li>
-                        <a href="skill.html">
+                        <a class="{{ (request()->is('admin/skills'))?'nav-active' : '' }}"
+                             href="{{ route('index-skills') }}">
                             <span><i class="fas fa-lightbulb"></i></span>
                             <span>Skills</span>
                         </a>

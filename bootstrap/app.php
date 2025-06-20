@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         
         $middleware->alias([
-                 "admin"=> "\app\Http\Middleware\Admin.php",
+                 "admin"=> "App\Http\Middleware\Admin",
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
