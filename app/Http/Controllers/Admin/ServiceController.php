@@ -55,6 +55,8 @@ class ServiceController extends Controller
             'description' => 'nullable|string',
         ]);
 
+        
+
         $service = Service::findOrFail($request->id);
         $service->fill($validatedData);
         $service->save();

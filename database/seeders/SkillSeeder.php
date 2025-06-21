@@ -18,19 +18,19 @@ class SkillSeeder extends Seeder
 
                 "name"=>"php",
                 "proficiency"=>"34",
-                "service_id"=>"1",
+                "service_id"=>"6",
             ],
             [
 
                 "name"=>"python",
                 "proficiency"=>"38",
-                "service_id"=>"2",
+                "service_id"=>"9",
             ],
             [
 
                 "name"=>"js",
                 "proficiency"=>"37",
-                "service_id"=>"3",
+                "service_id"=>"11",
             ],
          
             
