@@ -46,13 +46,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="education.html">
+                        <a class="{{ (request()->is('admin/educations'))?'nav-active' : '' }}" href="{{ route('index-educations') }}">
                             <span><i class="fas fa-graduation-cap"> </i></span>
                             <span>Educations</span>
                         </a>
                     </li>
                     <li>
-                        <a  href="experience.html">
+                        <a class="{{ (request()->is('admin/experiences'))?'nav-active' : '' }}" href="{{ route('index-experiences') }}">
                             <span><i class="fas fa-briefcase"> </i></span>
                             <span>Experiences</span>
                         </a>

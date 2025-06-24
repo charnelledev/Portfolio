@@ -51,13 +51,13 @@
 
                          <div>
                              <button class="btn-icon success" onclick="openEditModal({{ $skill->id }})">
-                                 <i class="fas fa-pencil-alt"></i>
+                                 <i class="fas fa-pencil-alt p-2 text-green-500"></i>
                              </button>
                              <form action="{{ route('delete-skills', $skill->id) }}" method="POST" style="display:inline;"
                                  onsubmit="return confirm('Voulez-vous vraiment supprimer ce skill ?');">
                                  @csrf
                                  @method('DELETE')
-                                 <button type="submit" class="btn-icon danger">
+                                 <button type="submit" class="btn-icon danger p-2 text-red-500">
                                      <i class="far fa-trash-alt"></i>
                                  </button>
                              </form>

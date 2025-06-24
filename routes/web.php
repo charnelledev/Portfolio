@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\EducationController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -52,6 +54,31 @@ Route::middleware('auth', "admin")->group(function () {
     Route::get('/admin/skills/edit/{id}', [SkillController::class, 'edit'])->name('edit-skills');
     Route::post('/admin/skills/update', [SkillController::class, 'update'])->name('update-skills');
     Route::post('/admin/skills/delete', [SkillController::class, 'destroy'])->name('delete-skills');
+
+    // Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+    //     Route::get('/educations', [EducationController::class, 'index'])->name('index-educations');
+    //     Route::post('/educations/store', [EducationController::class, 'store'])->name('store-educations');
+    //     Route::get('/educations/edit/{id}', [EducationController::class, 'edit'])->name('edit-educations');
+    //     Route::put('/educations/update', [EducationController::class, 'update'])->name('update-educations');
+    //     Route::delete('/educations/delete', [EducationController::class, 'destroy'])->name('delete-educations');
+    // });
+
+
+  
+Route::get('/admin/educations', [EducationController::class, 'index'])->name('index-educations');
+Route::post('/admin/educations/store', [EducationController::class, 'store'])->name('store-educations');
+Route::get('/admin/educations/edit/{id}', [EducationController::class, 'edit'])->name('edit-educations');
+Route::put('/admin/educations/update', [EducationController::class, 'update'])->name('update-educations');
+Route::delete('/admin/educations/delete', [EducationController::class, 'destroy'])->name('delete-educations');
+
+
+     Route::get('/admin/experiences', [ExperienceController::class, 'index'])->name('index-experiences');
+     Route::post('/admin/experiences/store', [ExperienceController::class, 'store'])->name('store-experiences');
+    Route::put('/admin/experiences/update', [ExperienceController::class, 'update'])->name('update-experiences');
+     Route::delete('/admin/experiences/delete', [ExperienceController::class, 'destroy'])->name('delete-experiences');
+
+
+
 });
 
 
