@@ -58,13 +58,14 @@
                         </a>
                     </li>
                     <li>
-                        <a  href="project.html">
+                        <a class="{{ (request()->is('admin/projects'))?'nav-active' : '' }}"
+                        href="{{ route('index-projects') }}">
                             <span><i class="fas fa-tasks"> </i></span>
                             <span>Projects</span>
                         </a>
                     </li>
                     <li>
-                        <a  href="testimonial.html">
+                        <a class="{{ (request()->is('admin/testimonials'))?'nav-active' : '' }}" href="{{ route('index-testimonials') }}">
                             <span><i class="fas fa-comment-dots"> </i></span>
                             <span>Testimonials</span>
                         </a>
