@@ -65,7 +65,8 @@
                         </a>
                     </li>
                     <li>
-                        <a class="{{ (request()->is('admin/testimonials'))?'nav-active' : '' }}" href="{{ route('index-testimonials') }}">
+                        <a class="{{ (request()->is('admin/testimonials'))?'nav-active' : '' }}" href="{{ route('admin.testimonials.index') }}"
+>
                             <span><i class="fas fa-comment-dots"> </i></span>
                             <span>Testimonials</span>
                         </a>

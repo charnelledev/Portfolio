@@ -1,37 +1,37 @@
+   <!--===================EDIT Testimonial ====================-->
+        <section class="about">
+            <div class="titlebar">
+                <h1>Edit Testimonial </h1>
+                <button>Update Testimonial</button>
+            </div>
+            <div class="card-wrapper">
+                <div class="wrapper_left">
+                    <div class="card">
 
+                        <label>Name</label>
+                        <input type="text" />
 
-<!--===================EDIT PROJECT ====================-->
-             <section class="about" id="project">
-                <div class="titlebar">
-                    <h1>Edit Project </h1>
-                    <button>Update Project</button>
-                </div>
-                <div class="card-wrapper">
-                    <div class="wrapper_left">
-                        <div class="card">
+                        <label>Function</label>
+                        <input type="text" />
 
-                            <label>Title</label>
-                            <input type="text" class="input" />
+                        <label>Testimony</label>
+                        <textarea cols="10" rows="5"></textarea>
 
-                            <label>Description</label>
-                            <textarea cols="10" rows="5"  ></textarea>
-
-                            <label>Link</label>
-                            <input type="text" class="input" />
-                                
-                        </div>
                     </div>
-                    
-                    <div class="wrapper_right ">
-                        <div class="card">
-                            <img src="../../template/assets/img/no-image.png" alt="" class="project_img">
-                            <input type="file">
-                        </div>    
+                </div>
+
+                <div class="wrapper_right">
+                    <div class="card">
+                        <label>Image</label>
+                        <img src="../../template/assets/img/avatar.jpg" alt="" class="project_img">
+                        <input type="file">
+                        <br><br><br>
                     </div>
-                    
                 </div>
-                <div class="titlebar">
-                    <h1></h1>
-                    <button>Update Project</button>
-                </div>
-            </section>
+
+            </div>
+            <div class="titlebar">
+                <h1></h1>
+                <button>Update Testimonial</button>
+            </div>
+        </section><br><br><br>
